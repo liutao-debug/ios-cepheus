@@ -34,9 +34,9 @@ env:
 
 jobs:
   build:
-    # macos-13 ships Xcode 15.x: its iig matches the xnu-8796 IORPC ABI (macos-14 runner unavailable on this account)
+    # macos-latest: fastest queue; 0082 patch handles Xcode 16 iig (IORPC.kernelContent)
     # (Xcode 16's iig emits IORPC.kernelContent, which this xnu lacks)
-    runs-on: macos-13
+    runs-on: macos-latest
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
